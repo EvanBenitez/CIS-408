@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1/EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>Name Drop</title>
+  <link type="text/css" href="style.css" rel="stylesheet" />
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body onpageshow="loadFeed()">
+  <div class="self-id">
+    <table>
+      <tr>
+
+        <td>
+          <table>
+            <tr>
+              <td><img id="user_pic" alt="Avatar" src=""/></td>
+            </tr>
+            <tr>
+              <td><h1 id="user_name"></h1></td>
+            </tr>
+          </table>
+        </td>
+
+        <td class="post-area">
+          <textarea id="emoji-area" name="emoji" rows="4" cols="75" maxlength="140"></textarea>
+          <div id="emoji-input" class="scroll"></div>
+          <div><button id="delete" onclick="back()">Backspace</button><button id="submit" onclick="postIt()">Post</button></div>
+        </td>
+
+      </tr>
+    </table>
+  </div>
+
+  <div class="feed"></div>
+</body>
+
+</html>
