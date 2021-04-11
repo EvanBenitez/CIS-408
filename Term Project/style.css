@@ -69,6 +69,19 @@ textarea {
   float:right;
 }
 
-#addver {
+#addver, #delver {
   color: red;
+}
+
+#listing {
+  width: 200px;
+}
+
+.navbar {
+  background-color: #cccccc;
+  overflow: hidden;
+}
+
+.navbar a {
+  color: #333333;
 }

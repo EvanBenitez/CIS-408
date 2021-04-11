@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1/EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>Name Drop</title>
+  <link type="text/css" href="style.css" rel="stylesheet" />
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body onpageshow="accountInit()">
+
+  <div class="navbar">
+    <a href="account.html">Account</a>
+    <a href="profile.html">Profile</a>
+    <a href="feed.html">Feed</a>
+    <a onclick="logOut()">Log Out</a>
+  </div>
+
+<center><h1>Account</h1></center>
+
+  <table style="border: 2px solid white; width: 100%;">
+    <tr>
+      <td>
+        <div id="add">
+          <h2>Add Person to Feed</h2>
+          <label for="follow">Enter user name:</label><br />
+          <input type="text" id="follow" name="follow" />
+          <button id="addbtn" onclick="follow()">Add</button><br />
+          <p id="addver"></p>
+        </div>
+      </td>
+      <td>
+        <div id="del">
+          <h2>Users Followed</h2>
+          <label for="listing">Users</lable><br />
+          <select name="listing" id="listing" size="5"></select>
+          <button id="delbtn" onclick="unfollow()">Delete</button><br />
+          <p id="delver"></P>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+<div id="follow-list"></div>
+</body>
+
+</html>

@@ -121,32 +121,85 @@ function postIt() {
   php.send("name=" + user + "&password=" + pass + "&text=" + text);
 }
 
-// setting functions
-function follow() {
-  var user = sessionStorage.getItem('user_id');
-  var follow = document.getElementById("follow").value;
+// account functions
+function accountInit() {
+  var user = sessionStorage.getItem("user_id");
+  var pass = sessionStorage.getItem("password");
+  var list = document.getElementById("listing");
 
   var php = new XMLHttpRequest();
   php.onreadystatechange = function () {
     if(this.readyState == 4 && this.status == 200) {
-      var ver = document.getElementById("addver");
-      if(this.responseText == 1){
-        ver.innerHTML = "Now following " + follow;
+      if(this.responseText){
+        list.innerHTML=this.responseText;
       }
       else {
-        if(this.responseText == 0){
-          ver.innerHTML = follow + " is not a registered user";
-        }
-        else if(this.responseText == -1){
-          ver.innerHTML = "Cannot follow self";
-        }
-        else {
-          ver.innerHTML = "You are already following " + follow;
-        }
+        location.href="denied.html";
       }
-      alert(this.responseText);
     }
   }
-  php.open("GET", "add.php?name="+user+"&follow="+follow, true);
-  php.send();
+  php.open("POST", "follower_pop.php", true);
+  php.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  php.send("name="+user+"&password="+pass);
+}
+
+function follow() {
+    var user = sessionStorage.getItem('user_id');
+    var pass = sessionStorage.getItem('password');
+    var follow = document.getElementById("follow").value;
+
+    var php = new XMLHttpRequest();
+    php.onreadystatechange = function () {
+      if(this.readyState == 4 && this.status == 200) {
+        var ver = document.getElementById("addver");
+        if(this.responseText == 1){
+          ver.innerHTML = "Now following " + follow;
+          accountInit();
+        }
+        else if(this.responseText == -1) {
+          location.href="denied.html";
+        }
+        else {
+          if(this.responseText == 0){
+            ver.innerHTML = follow + " is not a registered user";
+          }
+          else if(this.responseText == -1){
+            ver.innerHTML = "Cannot follow self";
+          }
+          else {
+            ver.innerHTML = "You are already following " + follow;
+          }
+        }
+      }
+    }
+    php.open("POST", "add.php", true);
+    php.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    php.send("name="+user+"&follow="+follow+"&password="+pass);
+}
+
+function unfollow() {
+  var user = sessionStorage.getItem('user_id');
+  var pass = sessionStorage.getItem('password');
+  var follow = document.getElementById("listing").value;
+
+  var php = new XMLHttpRequest();
+  php.onreadystatechange = function () {
+    if(this.readyState == 4 && this.status == 200) {
+      var ver = document.getElementById("delver");
+      alert(this.responseText);
+      if(this.responseText == 1){
+        ver.innerHTML = "No longer following " + follow;
+        accountInit();
+      }
+      else if(this.responseText == -1){
+        location.href="denied.html";
+      }
+      else {
+        ver.innerHTML = "Failed to remove " + follow + " from list";
+      }
+    }
+  }
+  php.open("POST", "del.php", true);
+  php.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  php.send("name="+user+"&follow="+follow+"&password="+pass);
 }
