@@ -6,7 +6,7 @@
   if($result && $result = $result->fetch_assoc()) {
     if($result['password'] == $_POST['password']) {
       if($result['avatar'] == null)
-        echo true;
+        echo "Default";
       else
         echo $result['avatar'];
     }

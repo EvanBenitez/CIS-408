@@ -10,7 +10,7 @@
     echo '"gender":"' . ($result['gender'] != null ? $result['gender'] : "") . '",';
     echo '"weight":' . ($result['weight'] == null ? '""' : $result['weight']) . ',';
     echo '"height":' . ($result['height'] == null ? '""' : $result['height']) . ',';
-    echo '"avatar":"' . ($result['avatar'] != null ? $result['avatar'] : "") . '"}';
+    echo '"avatar":"' . ($result['avatar'] != null ? $result['avatar'] : "Default") . '"}';
   }
   else {
     echo "Empty";

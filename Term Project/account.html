@@ -14,15 +14,15 @@
 <body onpageshow="accountInit()">
 
   <div class="navbar">
-    <a href="account.html">Account</a>
-    <a href="profile.html">Profile</a>
+    <a class="active" href="account.html">Account</a>
+    <a onclick="selfProfile()">Profile</a>
     <a href="feed.html">Feed</a>
-    <a onclick="logOut()">Log Out</a>
+    <div class="out"><a onclick="logOut()">Log Out</a></div>
   </div>
 
-<center><h1>Account</h1></center>
-
-  <table style="border: 2px solid white; width: 100%;">
+<div>
+ <center><h1>Account</h1></center>
+  <table id="account_input">
     <tr>
       <td>
         <div id="add">
@@ -44,9 +44,12 @@
       </td>
     </tr>
   </table>
+</div>
 
+<center><h1>Your Posts</h1></center>
 
-<div id="follow-list"></div>
+<div id="posts"></div>
+
 </body>
 
 </html>

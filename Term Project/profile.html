@@ -11,7 +11,14 @@
   <script src="script.js" type="text/javascript"></script>
 </head>
 
-<body onload="fill('User_X')">
+<body onload="fill()">
+  <div class="navbar">
+    <a href="account.html">Account</a>
+    <a class="active" onclick="selfProfile()">Profile</a>
+    <a href="feed.html">Feed</a>
+    <div class="out"><a onclick="logOut()">Log Out</a></div>
+  </div>
+
   <div class="profile">
     <img id="avatar" alt="Avatar" />
     <h1 id="user_id"></h1>

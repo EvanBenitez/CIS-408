@@ -12,7 +12,15 @@
 </head>
 
 <body onpageshow="loadFeed()">
+  <div class="navbar">
+    <a href="account.html">Account</a>
+    <a onclick="selfProfile()">Profile</a>
+    <a class="active" href="feed.html">Feed</a>
+    <div class="out"><a onclick="logOut()">Log Out</a></div>
+  </div>
+
   <div class="self-id">
+    <center><h1>Feed</h1></center>
     <table>
       <tr>
 
@@ -37,7 +45,9 @@
     </table>
   </div>
 
-  <div class="feed"></div>
+<center><h1><u>Posts</u></h1></center>
+
+  <div id="feed"></div>
 </body>
 
 </html>

@@ -78,10 +78,44 @@ textarea {
 }
 
 .navbar {
+  border: 3px solid #999999;
   background-color: #cccccc;
-  overflow: hidden;
 }
 
 .navbar a {
   color: #333333;
+  text-decoration: none;
+  font-size: 24px;
+  text-align: center;
+  padding-left: 14px;
+  padding-right: 14px;
+  cursor: pointer;
+}
+
+.navbar a:hover, a.active {
+  color: #cccccc;
+  border-top: 3px solid #999999;
+  border-bottom: 3px solid #999999;
+  background: #333333;
+}
+
+.out {
+  float: right;
+}
+
+#account_input {
+  width: 100%;
+}
+
+#posts {
+  border: 3px solid #cccccc;
+}
+
+.emoji {
+  font-size: 24px;
+  padding: 7px;S
+}
+
+.emoji img {
+  max-width: 150px;
 }

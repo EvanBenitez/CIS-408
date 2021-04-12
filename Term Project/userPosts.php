@@ -5,14 +5,15 @@
 
   if($result && $result = $result->fetch_assoc()) {
     if($result['password'] == $_POST['password']) {
-      $list = $connection->query("Select user from followers where follower ='" . strtolower(trim($_POST['name'])) . "'");
-      if($list->num_rows > 0){
-        while($user = $list->fetch_assoc()) {
-            echo "<option value='$user[user]'>$user[user]</option>";
+      $result = $connection->query("Select time, text from emoji_posts where name='" . strtolower(trim($_POST['name'])) . "'"
+          . "Order By time Desc");
+      if($result->num_rows > 0){
+        while($post = $result->fetch_assoc()) {
+          echo "<div class='emoji'><table><tr><td>$post[time]</td><td>$post[text]</td></tr></table></div>";
         }
       }
-      else {
-        echo "Nobody";
+      else{
+        echo "none";
       }
     }
     else {

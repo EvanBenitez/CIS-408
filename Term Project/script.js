@@ -1,6 +1,12 @@
 
 // profile.html functions
+function selfProfile() {
+  sessionStorage.setItem("profile",sessionStorage.getItem("user_id"));
+  location.href="profile.html";
+}
+
 function fill() {
+  var user = sessionStorage.getItem("profile");
   var php = new XMLHttpRequest();
   php.onreadystatechange = function () {
     if(this.readyState == 4 && this.status == 200) {
@@ -59,6 +65,7 @@ function loadFeed(){
         document.getElementById("user_name").innerHTML=user;
         document.getElementById("user_pic").src="Avatars/" + this.responseText;
         feeder();
+        post_feeds();
       }
       else {
         location.href="denied.html";
@@ -83,6 +90,28 @@ function feeder() {
   php.send();
 }
 
+      //gets followed Posts
+function post_feeds() {
+  var user = sessionStorage.getItem("user_id");
+  var pass = sessionStorage.getItem("password");
+  var posts = document.getElementById("feed");
+
+  var php = new XMLHttpRequest();
+  php.onreadystatechange = function () {
+    if(this.readyState == 4 && this.status == 200) {
+      if(this.responseText){
+        posts.innerHTML=this.responseText;
+      }
+      else {
+        location.href="denied.html";
+      }
+    }
+  }
+  php.open("POST", "followedPosts.php", true);
+  php.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  php.send("name="+user+"&password="+pass);
+}
+
 function emojiSelect() {
   var area = document.getElementById("emoji-area");
 
@@ -99,6 +128,7 @@ function back() {
   area.value = area.value.slice(0,-2);
 }
 
+// make a post
 function postIt() {
   var user = sessionStorage.getItem('user_id');
   var pass = sessionStorage.getItem('password');
@@ -109,7 +139,7 @@ function postIt() {
     if(this.readyState == 4 && this.status == 200) {
       if(this.responseText){
         alert("Posted!");
-        text.value = "";
+        location.reload();
       }
       else {
         alert("fail");
@@ -118,7 +148,7 @@ function postIt() {
   }
   php.open("POST", "poster.php", true);
   php.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  php.send("name=" + user + "&password=" + pass + "&text=" + text);
+  php.send("name=" + user + "&password=" + pass + "&text=" + text.value);
 }
 
 // account functions
@@ -132,6 +162,7 @@ function accountInit() {
     if(this.readyState == 4 && this.status == 200) {
       if(this.responseText){
         list.innerHTML=this.responseText;
+        userPosts();
       }
       else {
         location.href="denied.html";
@@ -186,7 +217,6 @@ function unfollow() {
   php.onreadystatechange = function () {
     if(this.readyState == 4 && this.status == 200) {
       var ver = document.getElementById("delver");
-      alert(this.responseText);
       if(this.responseText == 1){
         ver.innerHTML = "No longer following " + follow;
         accountInit();
@@ -202,4 +232,37 @@ function unfollow() {
   php.open("POST", "del.php", true);
   php.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   php.send("name="+user+"&follow="+follow+"&password="+pass);
+}
+
+function userPosts() {
+  var user = sessionStorage.getItem("user_id");
+  var pass = sessionStorage.getItem("password");
+  var posts = document.getElementById("posts");
+
+  var php = new XMLHttpRequest();
+  php.onreadystatechange = function () {
+    if(this.readyState == 4 && this.status == 200) {
+      if(this.responseText){
+        posts.innerHTML=this.responseText;
+      }
+      else {
+        location.href="denied.html";
+      }
+    }
+  }
+  php.open("POST", "userPosts.php", true);
+  php.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  php.send("name="+user+"&password="+pass);
+}
+
+function profile_picker(p) {
+  sessionStorage.setItem("profile",p);
+  location.href="profile.html";
+}
+
+// signout script
+function logOut() {
+  sessionStorage.setItem("user_id","");
+  sessionStorage.setItem("password","");
+  location.href="index.html";
 }
