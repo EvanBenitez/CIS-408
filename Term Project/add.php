@@ -1,4 +1,4 @@
-<?php
+<?php // Add user to the follower list
   $connection = new mysqli("localhost", "root", "", "name_drop");
   $auth;
 

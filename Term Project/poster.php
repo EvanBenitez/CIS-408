@@ -1,4 +1,4 @@
-<?php
+<?php // post emoji to emoji_posts
   $connection = new mysqli("localhost", "root", "", "name_drop");
 
   $result = $connection->query("Select password from users where name ='" . strtolower(trim($_POST['name'])) . "'");

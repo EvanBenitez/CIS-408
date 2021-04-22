@@ -113,6 +113,9 @@ if(trim($pro->user_name) != "" && $pro->pw != ""){
     if(db_adder::add($pro) != false){
       $html = $html . "<center><h2>Profile successfully created!</h2></center>";
       $html = $html . "<center><h3><a href='feed.html'>Go to FEED</a></h3></center>";
+      //Potentual issue here
+      $html = $html . "<script>sessionStorage.setItem('user_id','$pro->user_name');
+                        sessionStorage.setItem('password','$pro->pw');</script>";
     }
     else {
       $html = $html . "<center><h3>User name taken</h3></center>";

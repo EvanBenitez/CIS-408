@@ -1,4 +1,4 @@
-<?php
+<?php // return all the post of people being followed
   $connection = new mysqli("localhost", "root", "", "name_drop");
 
   $result = $connection->query("Select password from users where name ='" . strtolower(trim($_POST['name'])) . "'");

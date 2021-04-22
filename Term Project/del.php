@@ -1,4 +1,4 @@
-<?php
+<?php // delete an entry from the followers table
   $connection = new mysqli("localhost", "root", "", "name_drop");
   $auth;
 
@@ -19,7 +19,7 @@
 
   if($auth){
     $result = $connection->query("Delete from followers where user ='" . strtolower(trim($_POST['follow'])) . "' and follower='" . strtolower(trim($_POST['name'])) . "'");
-    
+
     if($result){
       echo $result;
     }

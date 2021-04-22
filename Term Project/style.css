@@ -31,8 +31,9 @@ a:hover {
   color: red;
 }
 
-.logo {
-  font-size: 100px;
+.logo img{
+  width: 300px;
+  height: auto;
 }
 
 .fail {

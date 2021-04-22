@@ -1,4 +1,4 @@
-<?php
+<?php // Profile information
   $connection = new mysqli("localhost", "root", "", "name_drop");
 
   $result = $connection->query("Select * from users where name ='" . strtolower(trim($_GET['name'])) . "'");
