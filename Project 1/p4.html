@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Evan Benitez's Website</title>
+  <meta name="viewport" content="width=device-width, intial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+
+  <style type="text/css">
+    /* style elements Copied from W3school.com */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* body style */
+    body {
+      font-family: Arial;
+      margin: 0;
+    }
+
+    /* Header and logo Tile */
+    .header {
+      padding: 60px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+    }
+
+    /* Style the top navigation bar */
+    .navbar {
+      display: flex;
+      background-color: #333;
+    }
+
+    /* Style the navigation bar links */
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Column container */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Create two unequal columns that sits next to each other */
+    .side {
+      flex: 30%;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    /* Main column */
+    .main {
+      flex: 70%;
+      background-color: white;
+      padding: 20px;
+    }
+
+    /* footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 700px) {
+      .row, .navbar {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div style="background: yellow; padding: 5px;">
+  <h4 style="text-align: center;">Resize the browser window to see the responsive effect.</h4>
+</div>
+
+<div class="header">
+  <h1>Evan Benitez's Website</h1>
+  <p>With a <b>flexible</b> layout</p>
+</div>
+
+<div class="navbar">
+  <a href="http://eecs.csuohio.edu/~evbenite/">My CSU Website</a>
+  <a href="https://www.csuohio.edu/">University Website</a>
+  <a href="https://www.w3schools.com/">W3Schools Onlline Web Tutorials</a>
+  <a href="http://eecs.csuohio.edu/~sschung/CIS408/CIS408S21.html#Lab">CIS 408 Site</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <img src="http://eecs.csuohio.edu/~evbenite/Pic.jpg" alt="Evan Benitez" style="height: 200px;" />
+    <p>Evan Benitez</p>
+    <p>CSUID: 2486032</p>
+    <h3>More Images</h3>
+    <div><img src="https://woub.org/wp-content/uploads/2015/04/earth-hi-res.jpg" alt="Earth" style="height: 60px; width:100%" /></div><br />
+    <div><img src="https://irp-cdn.multiscreensite.com/159d259b/dms3rep/multi/trees-blowing-in-the-wind-that-may-damage-your-roof.jpg" alt="Trees Blowing" style="height: 60px; width:100%" /></div><br />
+    <div><img src="https://media.pri.org/s3fs-public/styles/story_main/public/story/images/FIRE-CaliforniaFire.jpg?itok=PYQ8roFw" alt="Fire" style="height: 60px; width:100%" /></div>
+  </div>
+  <div class="main">
+    <h2>Go Ape</h2>
+    <h5>Zipplinning and Treetop advanture</h5>
+    <img src="https://www.goape.com/wp-content/uploads/2021/02/forest-doors-opening-1536x474.jpg" alt="Guy zipplining" style="height: 200px; width:100%" />
+    <p>Go Ape is a treetop advanture company originally from the UK. In 2010, they branched out into the united states.</p>
+    <br />
+    <h2>Hocking Hills</h2>
+    <h5>Scenic Southeastern Ohio </h5>
+    <img src="https://innatcedarfalls.com/wp-content/uploads/2017/02/hocking-hils-state-park-ohio-1500x609.jpg" alt="Waterfall" style="height: 200px; width:100%" />
+    <p>Located in Southeastern Ohio, the Hocking Hill offer picturesque landscapes and scenery.</p>
+  </div>
+</div>
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+</body>
+
+</html>

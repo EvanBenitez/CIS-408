@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1/EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Project 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css" href="format.css" rel="stylesheet" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+  <body onload="init()">
+    <div id="main">
+      <h2>Clickable Dropdown</h2>
+      <p>Click on the button to open the dropdown menu</p>
+      <div class="dropdown" onclick="menuClick()">
+        <button class="dropbtn">Dropdown</button>
+        <div id="menu" class="dropdown-content">
+          <a onclick="getName()">NAME</a>
+          <a onclick="getAddress()">ADDRESS</a>
+          <a onclick="getHours()">BUSINESS HOURS</a>
+          <a href="menu.html">MENU</a>
+          <a onclick="getServicesAndFeatures()">SERVICES and FEATURES</a>
+        </div>
+      </div>
+      <div>
+        <div id="bName"></div>
+        <div id="bAddress"></div>
+        <div>
+          <table>
+            <tr>
+              <td class="left"><div id="bHours"></div></td>
+              <td class="right">
+                <table style="width: auto;">
+                  <tr>
+                    <td class="feature"><div id="attributes1"></div></td>
+                  </tr>
+                  <tr>
+                    <td class="feature"><div id="attributes2"></div></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

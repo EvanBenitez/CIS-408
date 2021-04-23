@@ -1,0 +1,28 @@
+div {
+  font-family: Tahoma;
+  font-size: 13pt;
+}
+
+.container {
+  border: 10px solid #d0d0ff;
+}
+
+table {
+  border: 20px solid white;
+}
+
+thead {
+  border-bottom: 3px solid white;
+}
+
+td {
+  border-bottom: 1px solid white;
+}
+
+tr:nth-last-child(2) td {
+  border-bottom: 2px solid black;
+}
+
+td:nth-child(n+4), th:nth-child(n+4){
+  text-align: center;
+}

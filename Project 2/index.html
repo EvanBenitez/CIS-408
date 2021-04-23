@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1/EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Project 2</title>
+
+  <link type="text/css" href="p2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="p2.js"></script>
+
+</head>
+
+<body onload="startSlides()">
+  <!-- tab section -->
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class=" active"><a data-toggle="tab" href="#home">Home</a></li>
+      <li><a data-toggle="tab" href="#cis">CIS 408 Class</a></li>
+      <li><a data-toggle="tab" href="#courses">My Courses</a></li>
+      <li><a data-toggle="tab" href="#video">Video Player</a></li>
+      <li><a data-toggle="tab" href="#contact" onclick="runAnimation()">Add To Contact List</a></li>
+    </ul>
+
+    <!-- Tab content -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div id='home' class="tab-pane in active">
+        <h1>Evan Benitez</h1>
+        <h2>2486032</h2>
+        <h2>e.benitez@vikes.csuohio.edu</h2>
+        <h2>http://eecs.csuohio.edu/~evbenite/</h2>
+        <div class="wrapper">
+          <img src="http://eecs.csuohio.edu/~evbenite/Pic.jpg" style="width: 100%; height: auto; max-width:600px" alt="Evan Benitez"/>
+        </div>
+        <div class="slide-show">
+          <div class="slide wrapper">
+            <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Balanced_Rock.jpg/1200px-Balanced_Rock.jpg" alt="Balancing boulder" />
+          </div>
+          <div class="slide wrapper">
+            <img class="image" src="https://thumbs.dreamstime.com/x/ancient-paper-5165062.jpg" alt="parchment" />
+          </div>
+          <div class="slide wrapper">
+            <img class="image" src="https://www.kleintools.com/sites/all/product_assets/catalog_imagery/klein/46k_alt1.jpg" alt="scissors" />
+          </div>
+        </div>
+      </div>
+
+
+      <!-- CIS 408 Class tab content -->
+      <div id='cis' class="tab-pane">
+        <table class="frame">
+          <tr>
+            <td><iframe src="http://eecs.csuohio.edu/~sschung/CIS408/CIS408.html"></iframe></td>
+            <td><iframe src="http://eecs.csuohio.edu/~sschung/"></iframe></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <!-- My Courses tab content -->
+      <div id='courses' class="tab-pane">
+        <h1>Spring 2021</h1>
+        <h3>Class List</h3>
+        <ul>
+          <li><a href="CIS408/MyCIS408.html">CIS 368 Object-Oriented Programming</a></li>
+          <li>CIS 408 Internet Programming</li>
+          <li>CIS 434 Software Engineering</li>
+          <li>CIS 470 Mobil App Development</li>
+          <li>CIS 475 Computer Security</li>
+        </ul>
+      </div>
+
+
+      <!-- Video Player tab content -->
+      <div id='video' class="tab-pane">
+        <div>
+          <video id="eagle" class="video" style="width: 250px; height: auto;">
+            <source src="Project2Video.mp4" type="video/mp4">Eagle hunting goat</source>
+          </video>
+        </div>
+          <div class="controls">
+           <button id="pbutton" class="buttoncontrols" onclick="playVideo()">Play ></button>
+           <button class="buttoncontrols" onclick="restart()">Restart |></button>
+           <button class="buttoncontrols" onclick="back()">&lt;&lt;</button>
+           <button class="buttoncontrols" onclick="forward()">&gt;&gt;</button>
+        </div>
+      </div>
+
+
+      <!-- Add To Contact List tab content -->
+      <div id='contact' class="tab-pane">
+        <div id="thebox">
+          <h1>HTML Form</h1>
+          <form id="formData" action="ServerScriptFile.html">
+            <lable for="fname">First Name:</lable>
+            <input type="text" id="fname" name="fname"></input><br/><br/>
+            <lable for="lname">Last Name:</lable>
+            <input type="text" id="lname" name="lname"></input><br /><br/>
+            <lable for="email">Email:</lable>
+            <input type="text" id="email" name="email"></input><br /><br/>
+            <input type="submit"></submit>
+          </form>
+
+            <br />
+
+          <p>
+            If you click the "Verify" button, your contact info and the URL of where to send the form data to
+            when the form above is submitted, will be displayed.
+          </p>
+            <br />
+          <button onclick="showInfo()">Verify</button>
+
+          <div id="data">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+          <canvas id="runner" style="width: 100%; height: 300px;">Your browser doesn't support media</canvas>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1/EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link type="text/css" href="format.css" rel="stylesheet" />
+    <script type="text/javascript" src="menuScript.js"></script>
+  </head>
+
+  <body id="menu-body" onload="init()">
+    <div>
+      <center><h1>Menu Selection</h1></center>
+      <div class="inner-frame">
+        <button class="menubtn" onclick="onMenu()">Menu</button>
+        <div style="border-top: 1px solid #dddddd;">
+          <table>
+            <tr>
+              <td id="menu-pane">
+                <div id="food-menu" class="menu-options">
+                  <a onclick="onBreakfast()">Breakfast Menu</a>
+                  <a onclick="onBrunch()">Brunch Menu</a>
+                  <a onclick="onLunch()">Lunch Menu</a>
+                  <a onclick="onDinner()">Dinner Menu</a>
+                  <a onclick="onDrink()">Drink Menu</a>
+                </div>
+              </td>
+              <td id="menu-content"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

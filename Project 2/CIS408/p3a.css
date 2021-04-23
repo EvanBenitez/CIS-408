@@ -1,0 +1,31 @@
+div {
+  font-family: Tahoma;
+  font-size: 13pt;
+  ;
+}
+
+thead {
+  border-bottom: 1px solid white;
+  background-color: #687291;
+  color: white;
+}
+
+td{
+  border-bottom: 1px solid white;
+}
+
+td:nth-child(n+4), th:nth-child(n+4){
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eeeff2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #dfe1e7;
+}
+
+.omit {
+  display: none;
+}
