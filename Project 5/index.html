@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1/EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Project 5</title>
+  <link type="text/css" href="style.css" rel="stylesheet" />
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+  <div>
+    <center>
+      <label for="search">Search:</label>
+      <input type="text" id="search" name="search" /><br />
+      <input type="radio" id="name" name="type" value="Title" />
+      <label>Title</label>
+      <input type="radio" id="artist" name="type" value="Artist" />
+      <label>Artist</label>
+      <input type="radio" id="price" name="type" value="Price" />
+      <label>Price</label>
+      <input type="radio" id="year" name="type" value="Year" />
+      <label>Year</label><br />
+      <button id="searchbtn" onclick="search()">Search</button>
+    </center>
+  </div>
+  <center><div id="results"></div></center>
+</body>
+
+</html>

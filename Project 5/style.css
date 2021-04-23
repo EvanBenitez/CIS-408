@@ -1,0 +1,12 @@
+#results table {
+  border-collapse: collapse;
+}
+
+#results table th {
+  border: 2px solid black;
+}
+
+#results table td {
+  border: 1px solid black;
+  padding-right: 15px;
+}
